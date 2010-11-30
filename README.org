@@ -1,0 +1,138 @@
+#+TITLE: Why Git
+#+AUTHOR: Siddhant Sanyam 
+#+EMAIL: siddhant3s at gmail
+
+#+OPTIONS: toc:nil
+
+[[http://git-scm.com/][_Git_]] and [[http://subversion.tigris.org/][_SVN_]] are two popular version control system.
+Although both are classified under `version control software', 
+they differ heavily in their internal working and overall anatomy.
+The main difference between Git and SVN is that Git a distributive 
+version control system while SVN is a centralized version control system.
+I'll try to explain briefly how it affects the general work-flow in an open
+source project.
+
+Both Git an SVN have massive community behind them. People are migrating from
+SVN (which still has a huge community) to Git. I migrated too. After moving
+to Git, I liked it so much, that I now wonder how would have I lived without 
+it. Often it is hard to convince SVN zealots why moving to Git is a wise
+decision. After explaining to few local develpers of my institute, I thought
+it would be better to write it down why I think going with Git is much better
+choice.
+
+/Those of  you who haven't used SVN yet, are still in a better position./
+/Your mind is free and I'll recommend you to start with Git itself. Check the `Resources' section for some pointers
+to some learning resources on Git./
+* Why Git and not SVN
+If you are an SVN user, you probably would be imagining: /why would I ever
+choose anything but SVN, it is just perfect/. Hold it. You *think* SVN is
+perfect because you might have not seen what other version control software are
+capable of doing. I mean yes, I must confess that even I used to think likely.
+For all my small projects, I thought SVN was a gift sent from God[fn:god].
+All this went fine until when I realized that SVN has some intrinsic problem
+with the way it works. Well, I won't call it a problem in strict sense, but
+it was not designed to work in certain scenarios.
+* General problems with SVN
+** No local commits
+Suppose there is a medium to large project which is version controlled using SVN.
+There would be a core group of people who would retain the commit access to the
+central repository. This is understandable, since they don't want just anyone to 
+commit to the central repo. Now if you are a developer working on the project,
+your general work flow using SVN would be something like this.
+1. Checkout a copy from the central repository.
+2. Do some changes
+3. Keep doing =svn update= periodically while you work on your development so your changes are compatible with the latest revision
+4. Finish your work
+5. Do =svn diff=, make a patch and send it to the core developer who can commit it or
+6. Ask the project admin for temporary permission to commit.
+Looks simple. Well it is. Until you notice how hard your life gets when your
+pursue step 2 and 3. Often you need to work on a large feature, which itself
+is composed of many logical steps which needs to be implemented. So, until 
+and unless you have not completed all those steps, your lose the facility
+to version control your code i.e. until and unless you (or the project
+administrator) do a commit, all the code is out of the version control.
+This is so frustrating. Why am I using a version control software if I can't
+use it to, well, version control my code?
+You sure have a way around with this: 
+1. Check out the code from central repo
+2. Do an =svn export= and get a clean, unversioned copy of the code
+3. Make a local repo of that copy.
+4. Do changes to the code and keep committing them.
+5. Finish your work.
+6. Make ugly patch with the current revision and send it to project admin
+But this is to kill one's time. It is humiliating. Worst of all, it won't always
+work. Specially if the project is fast i.e. the code in the central repo changes
+at quite a rate.
+Other option is to create branches. But as an SVN user, you must know how merging of
+branches sucks in SVN. This is no secrete: SVN fails badly at branching.
+** Second problem: one needs to be online
+SVN shines out really well if I am not collaborating my work with anyone.
+If I am to version control a software which resides on my computer, and I am
+confident that I won't put it up online as an SVN repo, then there is no reason
+why SVN is not the right tool. It sure is. All the problem with SVN starts when you decide to put your repo on a central
+server to collaborate with others.
+One of the draw backs of this is, that I need to be connected to the Internet
+to use SVN. Why? Because I cannot commit if I am disconnected. Now this seems
+a very trivial problem and you may counter with an argument ``I always have
+Internet access". Well then you are a lucky guy but the problem doesn't end here.
+Since each commit requires Internet connectivity, the process is slow. How slow,
+depends on your Internet connection but certainly slower than a commit to a local repo.
+Slow commits means you will want to avoid them. You would only commit after 
+writing a significant amount of code. Less commits means less information to go
+back in time. Less information to do tedious operations like merging and branching.
+*** Why commit more?
+Let's be honest with ourselves: most of us don't write correct code in first go.
+And because we don't write correct code in first go, new code often contains
+bugs. As the nature of software is, bugs tend to pile up as we keep writing new code.
+Now suppose you wrote ten feature in a code and then committed. After finishing you found out
+that this code breaks and you will need to revert back to the last version.
+This means that you will have to write those ten features again, because you are not
+sure that exactly which feature caused the code to break.
+On the other hand, if you had commited after each feature, you could have gone back
+step by step and see precisely which feature causes the bug.
+** Branching is important
+Branching is absolutely a necessary feature in a version control software. You need branching.
+Most of SVN users avoid it and live their life without branching. This is because for them,
+branching becomes a nightmare when they try to merge two branches back.
+And so they think, ``Ah, I really don't need branching. I can work on a single
+branch. After all, how hard can that be?".
+As it turns out, it /is/ hard to live without branching. At least after you have
+experienced it with Git.
+Branching is embedded into the very work-flow of software development, specially the  open source development.
+Think about it, what we are basically doing in version controlling is maintaining the different branches.
+In a team, a person =A= might be working on feature 1 while another person =B= working
+on feature 2. The most logical way of working simultaneously is to branch out,
+work separately and merge later. Only if it was so simple as it sounds. In Git, it is.
+It might be hard to accept as an SVN user how can branching work, but here in Git, it just does.
+Why does it work you ask? Well that is because Git stores enough information about the parent tree
+and previous history to merge two branches. SVN doesn't.
+You still might not be convinced how branching would an extra dimension to your work-flow.
+Don't worry, even I didn't know how recursion would be useful back then when I used to work on BASIC.
+I never thought how first class functions would be useful until I worked with Lisp and Python. But they are.
+And you realize it only when you use these features.
+
+* With Git
+Let us now see how Git solves the above problem.
+** Git is distributive
+Git is completely distributive. That means, that each developer has the entire
+revision history with him. He has the entire copy of the repository. In Git, users  
+=clone= a repo and then work on it. Hence, they all are working on their separate repo
+, committing to it and using all functionality of a version control system on their
+repository.  How does it matter? Well, it solves the first problem. Now when you =clone=
+a repo, you have full rights to commit to it, and do whatever you want to do with it.
+It is your repo. You don't need the permission of any project admin to let you enjoy
+the benefits of commits. You can still =pull= from the central repo [fn:centralrepo] 
+to keep you updated with the current /main/ revision. Alternatively, you may choose to defer
+the =pull= and Git will merge it easily. After your task is completed, you might want to 
+revise it, test it. Once you are confident about your code, you can ask the project admin to
+=pull= from your repo. This will cause Git to copy the changes from your repo and merge them with
+the repo of the project admin. This merging nearly always work (At least, I have never seen it getting failed.).
+
+
+[fn:god]The word `God' was used in non-literal sense. I am an atheist.
+[fn:centralrepo]This might confuse you. How can distributive system have a /central/ repo? Often working
+on projects, Git users keep a central copy of repo (usually on [[http://github.com][Github.com]]). This is just like another
+repo of some user. It is just that we give it a logical name as /central/. Only project administrators can =push=
+to this repo. The link to this repo is circulated on the project's website and is marked as the /official/ repo
+for the project.
+
