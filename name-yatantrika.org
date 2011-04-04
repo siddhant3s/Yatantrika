@@ -1,4 +1,4 @@
-#+POSTID: 14
+#+POSTID: 60
 #+DATE: [2011-04-03 Sun 04:13]
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: Informal
