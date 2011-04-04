@@ -1,8 +1,9 @@
+#+POSTID: 14
 #+DATE: [2011-04-03 Sun 04:13]
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
-#+CATEGORY: Uncategorized, 
-#+TAGS: name, yatantrika
-#+DESCRIPTION: The blog entry is about how I made up the name for this blog
+#+CATEGORY: Informal
+#+TAGS: name, yatantrika, sanskrit, yantra, tantra, patrika
+#+DESCRIPTION: This blog entry is about how the name for this blog
 #+TITLE: The name : Yatantrika
 * What does Yatantrika mean?
 Yatantrika is not a dictionary word. It is a word I made up when I was looking up for a decent name for my blog.
@@ -37,13 +38,14 @@ Sanskrit words: Yantra, Tantra, and Patrika
 ** Why not Yantrantrika?
    It can be easily observed that the first part of the word (/yantra/) doesn't actually fit properly into the final name (/yatantrika/).
    Few may suggest that the alternate name could be something like Yantrantrika, but that spoils the second word (/tantra/). Moreover, this word, is longer, prone to slip of tounge,
-   and is not easily pronounciable. Also, I didn't want to just concatanate the three words together, making them appear that I have slapped them against each other.
+   and is not easily pronounciable. Also, I didn't want to just concatanate the three words together, making them appear as if I have slapped them against each other.
    Yatantrika is much more pleasant and natural.
 ** Final result
    I liked the final thing that came out. Although I am convinced that I might not have thought of all these details when I came up with it, I feel that it is good idea to be able to explain the
    origin of a weird sounding word.
 * How to pronounce it?
-  It is actually very easy to pronounce the name. It can be pronounced in multiple styles and it is true that you might be able to pronounce it in a weird way. The way I pronounce it is as follow:
+  It is actually very easy to pronounce the `Yatantrika'. 
+  It can be pronounced in multiple styles and it is true that you might be able to pronounce it in a weird way. The way I pronounce it is as follow:
   - The first ``Ya" is pronounced as the first part of Yak.
   - the second part ``tan" is same as the end of Hindustan, Pakistan, Afghanistan
   - the third part ``trika" is pronounced similar to the English word ``trick" with an ``aaa" sound at the end to make it ``trickaaa".

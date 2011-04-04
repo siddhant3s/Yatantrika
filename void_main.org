@@ -1,0 +1,109 @@
+#+POSTID: 61
+#+DATE: <2010-11-09 Tue 00:00>   
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: Technical, Programming, C/C++, 
+#+TAGS: argv, C++, int argc, iso c, line arguments, lt, main, newbie question, operating system, operating systems, standardization committee,
+#+DESCRIPTION: Answer to the popular question about the return type of main
+#+TITLE: Should I be using void main() or int main()
+#+STYLE: <link rel="stylesheet" type="text/css" href="zenburn-code.css" />
+
+I guess this the the most popular newbie question in C++.
+The straight answer lies here:
+*Use int main()*
+int main() and nothing else but int main();
+or if you need command line arguments use:
+#+BEGIN_SRC c++
+  int main(int argc,char** argv)
+#+END_SRC
+Actually, there is no such thing as =void main()= in C++ and even in C.
+If your compiler is allowing you to use =void main()=, probably it's a very
+bad and old compiler and you should consider switching to a standard
+ compiler which follows the standardization of C++.
+Remember that =main()= can return only =int= [fn:free-standing]. 
+And it has to return an =int=. Its return type is only =int=.
+If you are not getting this point straight, you're probably in theneed for an explanation.
+* Explaination
+  I can give a possible explaination but that shouldn't be the only motivation behind
+  using =int main()=. The actual explanation is that it is a standard decided by
+  ISO C,C++ Standardization Committee. Yes, it is a standard and one should follow it strictly or
+  compromise the portability or the program among the standard compilers.
+
+  The other reasons can be given to satisfy your soul. he Operating System uses the
+  return value for various other purposes. To give an example, most of the Unix and Linux operating 
+  system often uses the return value to ensure that execution of the program has 
+  been done correctly. These return values are also used in bash scripts and act analogous to the
+  return value of a function.
+  One may argue that their operating system doesn't require any such return value. Even then, returning
+  =int= from =main()= is a good idea because it ensures that your code is compilable on the standard compilers.
+* Few points to note
+  Unlike other functions in C or in C++, =main()= doesn't assume the default return type to be =int=.
+  That means, you cannot skip writing the =int= before the definition of =main()= and assume that 
+  the return type is =int=. On standard C++ compilers, this will give an error:
+  #+BEGIN_SRC c++
+    #include <iostream>
+    main() //wrong, has to be int main()
+    {
+      return (0);
+    }
+  #+END_SRC
+  
+  You have to explicitly write =int main()= and define =main()= like this:
+#+BEGIN_SRC c++
+  #include <iostream>
+  int main() //right, 
+  {
+    return (0);
+  }
+  #+END_SRC
+
+  Secondly, you may skip the =return(0);= statement while ending the =main()= like this:
+#+BEGIN_SRC c++
+  #include <iostream>
+  int main() 
+  {
+    std::cout<<"Hello World";
+    // no explicit return statement issued
+  }
+  #+END_SRC
+  as the example above, I have not issued a =return(0);= statement.
+  Hence, by default a =return(0);= has been issued for you by the 
+  compiler.
+
+  Third, issue is not related to return type of =main()= but actually related
+  to main() itself. I have seen many programs calling main() from other
+  functions. Like:
+  #+BEGIN_SRC c++
+    void func1();
+    int main()
+    {
+      //some code here too
+      func1();
+      //more code here
+      return(0);
+    }
+     
+    void func1()
+    {
+      //do something
+      //do something
+      main(); //bad
+    }
+  #+END_SRC
+  Calling =main()= is almost never a good idea. As for now, C++ standards don’t allow explicit call to =main()= function.
+  If you are calling =main()= you don’t care about the program flow and utilization of resources.
+  The =main()= functions is to be called only by the system once your program executes initially. You should never (and will never need to) call main(). You might think that it works.
+  It's an illusion. It is actually degrading your programing practices  as well as the resources of the system you are running your program at.
+
+* Conclusion
+  To conclude, I just want to say that if you stick with the standards, 
+  you will never fall away from coding right. Remember, that there is
+  no =void main()= or =float main()= but just =int main()=.
+  Finally, you should never call =main()= in any of your functions including from =main()= itself.
+
+[fn:free-standing] There is an exception to this rule: =main()= is bound to return
+an int value in an /hosted environment/. According to the standards, =main()= can
+return any kind of value, or return no value at all (i.e. return =void=) if
+the code is getting compiled for a /free-standing/ environment. This shouldn't 
+bother you, because all the code written for a computer running an operating
+system falls into the category of hosted environment. Free standing environment includes code for embedded systems 
+such as Micro-controllers and Microprocessors. 
