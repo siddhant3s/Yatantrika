@@ -1,0 +1,35 @@
+#+POSTID: 100
+#+DATE: <2010-10-21 Thu 21:51>    
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: Informal, 
+#+TAGS: freetalk, geeky, hacker, love, hackish, like, love, propose
+#+DESCRIPTION: Few geeky but romantic lines
+#+TITLE: Hacker's Love
+Last night I was all sleepy, trying to keep my book of 
+`Computer Organisation and Architecture’ open for the exam next morning.
+As it turned out, keeping book open was a child’s play as compared to 
+keeping my eyes open. I was on a steady diet of Coffee and Maggie (for 
+all those who don’t know about Maggie, it is the standard `two minute 
+instant noodles’ which is not only popular over here but is also considered
+as the staple food for many students like me).
+After trying real hard to keep myself awake till 4 in the morning, 
+I finally gave a thought to open my Laptop’s lid and surf something.
+After hacking few python script (to upload a directory recursively to my FTP
+website) and scripting my GNU Freetalk, I got into the serious hacker-mode.
+I don’t remember the details of what happened since, of course I was extremely
+sleepy, next I know is that I wrote this little piece of text (I still 
+wonder if /I/ did; I mean I discovered this in the morning, when my Emacs
+was opened with the following written on the  =*scratch*= buffer)
+#+BEGIN_SRC plain
+I shall `rm -rf' all your pain, and always `grep' the nicest things about you.
+I'll `make' you happy forever.
+If you could `mkdir' for my heart and `adduser' me in your life as a `sudo'er.
+I shall `apt-get' whatever you wish, even those things that aren't in the `repos'.
+I'll `ping' you in the time when you need me the most, and always respond to your `CTCP pings'.
+It seems that I have `chown' myself to you.
+You have a `777' on me. I can `patch' myself if we have a `diff'.
+And if you really want, I can leave all of me, be as normal, as you want me to be.
+#+END_SRC
+In the morning when I looked at it, I smiled gently and reminded me that I was 
+getting late for the exam. After coming back, I  wondered if it actually mean
+anything. For some reason, I still like it, and hence posting it here.
