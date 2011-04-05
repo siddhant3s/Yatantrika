@@ -1,0 +1,15 @@
+#+DATE: [2011-04-05 Tue 22:05]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: Informal
+#+TAGS: cat, pixie, rat
+#+DESCRIPTION: Random lines on my cat, Pixie
+#+TITLE: Micro-ode to a Cat
+Random Lines on my Cat, Pixie:
+#+BEGIN_QUOTE
+The cat, dropped the hat on the mat to capture the rat and eat it raw.
+She ate it alive while it ‘as begging for its life; surely there are no animal rights in the cats’ law.                          
+The cat saw that I saw her sawing the mice with her left canine. After that she took the rest of it and elsewhere did she dine.
+Now she is sitting in front of me watching me as I type this making an innocent face.
+No matter how much I like my cat, or she like me back,  we surely disagree on our tastes.
+#+END_QUOTE
+

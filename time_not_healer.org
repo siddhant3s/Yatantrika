@@ -1,0 +1,18 @@
+#+POSTID: 105
+#+DATE: <2010-06-03 Thu 22:11>   
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: Quotes and Thoughts,  
+#+TAGS: time, no healer, anesthetic
+#+DESCRIPTION: Disagreement on a popular quote
+#+TITLE: Time is not a healer
+Was just thinking the other day, many people believe and say that
+#+BEGIN_QUOTE
+Time is the greatest healer. -- Anonymous
+#+END_QUOTE
+But I differ in opinion and as I analyzed it, this is a big illusion.
+Rather I think that
+#+BEGIN_QUOTE
+Time is no healer, it’s just a popular anesthetic.
+#+END_QUOTE
+I think it is pretty much understood what I meant by the above lines.
+Give a thought to it.
