@@ -31,7 +31,7 @@ would agree on this thought though, they feel that Gtalk interface is much more 
 IRC provide much finer control about how you should chat. You meet new people on popular networks like =irc.freenode.net=. You tend to discuss
 more productive stuff on IRC, than you do on some other add-a-friend like protocol like Jabber (the underlying protocol which Gtalk supports).
 I remember the days when I was in twelfth standard and also in my first year of college, I used to be on IRC nearly all the time. I used to discuss stuff on
-=##physics=, =#avr=, =##programming= etc. One complain from I used to receive is that IRC requires a client to be downloaded.
+=##physics=, =#avr=, =##programming= etc. One complaint from I used to receive is that IRC requires a client to be downloaded.
 I don't understand how is this a problem? There are tons of free IRC clients for both Linux, Windows or any other platform possible. There is even
 a [[http://webchat.freenode.net][web client]] for freenode (although I must agree that it is not that neat compared to the web client of Gtalk).
 
